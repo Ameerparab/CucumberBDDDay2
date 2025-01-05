@@ -11,7 +11,7 @@ public class HomePage extends BasePage {
 	}
 
 	// Elements
-	@FindBy(xpath = "//span[text()='My Account']")
+	@FindBy(xpath = "//a[@class='logo logo_header ng-scope']")
 	WebElement lnkMyaccount;
 
 	@FindBy(linkText = "Register")
@@ -23,7 +23,7 @@ public class HomePage extends BasePage {
 	@FindBy(xpath="//input[@placeholder='Search']")  //For Search Product Test
 	WebElement txtSearchbox;
 	
-	@FindBy(xpath="//div[@id='search']//button[@type='button']") //For Search Product Test
+	@FindBy(xpath="//button[normalize-space()='Log in']") //For Search Product Test
 	WebElement btnSearch;
 	
 	

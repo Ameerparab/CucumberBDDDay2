@@ -18,7 +18,7 @@ import io.cucumber.junit.CucumberOptions;
 							  "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 							},
 							
-					dryRun=true,    // checks mapping between scenario steps and step definition methods
+					dryRun=false,    // checks mapping between scenario steps and step definition methods
 					monochrome=true,    // to avoid junk characters in output
 					publish=true   // to publish report in cucumber server
 					//tags="@sanity"  // this will execute scenarios tagged with @sanity

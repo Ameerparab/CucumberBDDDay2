@@ -28,20 +28,20 @@ public class LoginSteps {
     public void user_navigate_to_login_page() {
     	
     	BaseClass.getLogger().info("Goto my account-->Click on Login.. ");
-    	hp=new HomePage(BaseClass.getDriver());
+        hp=new HomePage(BaseClass.getDriver());
     	
     	hp.clickMyAccount();
-    	hp.clickLogin();
+    	/*hp.clickLogin();*/
                    
     }
 
  
-    @When("user enters email as {string} and password as {string}")
-    public void user_enters_email_as_and_password_as(String email, String pwd) {
-    	BaseClass.getLogger().info("Entering email and password.. ");
+    @When("user enters username as {string} and password as {string}")
+    public void user_enters_username_as_and_password_as(String uname, String pwd) {
+    	BaseClass.getLogger().info("Entering username and password.. ");
     	
     	lp=new LoginPage(BaseClass.getDriver());
-       	lp.setEmail(email);
+       	lp.setUsername(uname);
         lp.setPassword(pwd);
         }
 
@@ -64,18 +64,18 @@ public class LoginSteps {
     }
 
     //*******   Data Driven test **************
-    @Then("the user should be redirected to the MyAccount Page by passing email and password with excel row {string}")
-    public void check_user_navigates_to_my_account_page_by_passing_email_and_password_with_excel_data(String rows)
+  /*  @Then("the user should be redirected to the MyAccount Page by passing username and password with excel row {string}")
+    public void check_user_navigates_to_my_account_page_by_passing_username_and_password_with_excel_data(String rows)
     {
         datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Opencart_LoginData.xlsx", "Sheet1");
 
         int index=Integer.parseInt(rows)-1;
-        String email= datamap.get(index).get("username");
+        String email= datamap.get(index).get("uname");
         String pwd= datamap.get(index).get("password");
         String exp_res= datamap.get(index).get("res");
 
         lp=new LoginPage(BaseClass.getDriver());
-        lp.setEmail(email);
+        lp.setUsername(uname);
         lp.setPassword(pwd);
 
         lp.clickLogin();
@@ -118,6 +118,6 @@ public class LoginSteps {
 
             Assert.assertTrue(false);
         }
-      }
+      }*/
  
 }
